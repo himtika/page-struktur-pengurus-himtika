@@ -1,40 +1,12 @@
-import { useEffect, useState } from "react";
-import { dataSCBPH } from "../data/data-sc-bph";
 import DepartmentDetailCard from "./department-detail-card";
 import MemberCard from "./member-card";
 import empty from "/empty.jpeg";
 
 function StrukturLaptopView() {
-  const [screenWidth, setScreenWidth] = useState(window.innerWidth);
-
-  const erizkaData = dataSCBPH.get("erizka");
-  const rizkaData = dataSCBPH.get("rizka");
-
-  // Card Erizka & Rizka gk berubah klo viewport diresize
-  useEffect(
-    function () {
-      if (!erizkaData || !rizkaData) return;
-
-      window.onresize = function() {
-        setScreenWidth(window.innerWidth);
-      }
-
-      dataSCBPH.set("erizka", {
-        ...erizkaData,
-        cardType: screenWidth >= 1024 ? "level-2" : "level-3",
-      }),
-        dataSCBPH.set("rizka", {
-          ...rizkaData,
-          cardType: screenWidth >= 1024 ? "level-2" : "level-3",
-        });
-    },
-    [screenWidth, rizkaData, erizkaData]
-  );
-
   return (
-    <ul className="hidden lg:flex bg-white w-[90%] container mx-auto mt-10 rounded-3xl relative py-24 px-3 flex-col items-center gap-16">
+    <ul className="hidden lg:flex bg-white2 w-[90%] container mx-auto mt-10 rounded-3xl relative py-24 px-3 flex-col items-center gap-16">
       <MemberCard cardId="aldo">
-        <div className="w-1.5 h-16 bg-black absolute top-full left-1/2 "></div>
+        <div className="w-1.5 h-20 bg-black absolute top-full left-1/2 "></div>
       </MemberCard>
 
       <MemberCard cardId="bunga">
@@ -53,21 +25,25 @@ function StrukturLaptopView() {
         <div className="w-[385.5%] h-1.5 bg-black absolute top-[390%] -left-[141.5%] "></div>
       </MemberCard>
 
-      <li className="w-full flex justify-center gap-[50%] mt-24">
-        <MemberCard cardId="gina" />
+      <li className="w-full mt-24">
+        <ul className="flex justify-center gap-[50%]">
+          <MemberCard cardId="gina" />
 
-        <MemberCard cardId="fitri" />
+          <MemberCard cardId="fitri" />
+        </ul>
       </li>
 
-      <li className="w-full flex justify-center gap-[50%]">
-        <MemberCard cardId="erizka" />
+      <li className="w-full">
+        <ul className="flex justify-center gap-[50%]">
+          <MemberCard cardId="erizka" />
 
-        <MemberCard cardId="rizka" />
+          <MemberCard cardId="rizka" />
+        </ul>
       </li>
 
       {/* Divisi */}
       <li className="w-full flex justify-evenly mt-[15%]">
-        <div className="flex flex-col w-[15%] items-center gap-16">
+        <ul className="flex flex-col w-[15%] items-center gap-16">
           <MemberCard cardId="zaki" className="lg:w-full" />
 
           <DepartmentDetailCard
@@ -75,9 +51,9 @@ function StrukturLaptopView() {
             departemen="Human Resource Development"
           />
           <DepartmentDetailCard imageUrl={empty} departemen="Himtika Care" />
-        </div>
+        </ul>
 
-        <div className="flex flex-col w-[15%] items-center gap-16">
+        <ul className="flex flex-col w-[15%] items-center gap-16">
           <MemberCard cardId="ojan" className="lg:w-full" />
 
           <DepartmentDetailCard
@@ -85,9 +61,9 @@ function StrukturLaptopView() {
             departemen="Public & Marketing"
           />
           <DepartmentDetailCard imageUrl={empty} departemen="Public Relation" />
-        </div>
+        </ul>
 
-        <div className="flex flex-col w-[15%] items-center gap-16">
+        <ul className="flex flex-col w-[15%] items-center gap-16">
           <MemberCard cardId="nadin" className="lg:w-full">
             <div className="w-1.5 h-[20%] bg-black rounded-full md:rounded-sm absolute bottom-full left-1/2 " />
             <div className="hidden lg:block w-1.5 h-[100%] bg-black rounded-full md:rounded-sm absolute top-full left-1/2" />
@@ -101,9 +77,9 @@ function StrukturLaptopView() {
             imageUrl={empty}
             departemen="Research Development"
           />
-        </div>
+        </ul>
 
-        <div className="flex flex-col w-[15%] items-center gap-16">
+        <ul className="flex flex-col w-[15%] items-center gap-16">
           <MemberCard cardId="bintang" className="lg:w-full" />
 
           <DepartmentDetailCard imageUrl={empty} departemen="Skill Education" />
@@ -111,14 +87,14 @@ function StrukturLaptopView() {
             imageUrl={empty}
             departemen="College Education"
           />
-        </div>
+        </ul>
 
-        <div className="flex flex-col w-[15%] items-center gap-16">
+        <ul className="flex flex-col w-[15%] items-center gap-16">
           <MemberCard cardId="catur" className="lg:w-full" />
 
           <DepartmentDetailCard imageUrl={empty} departemen="Media Kreatif" />
           <DepartmentDetailCard imageUrl={empty} departemen="Media Informasi" />
-        </div>
+        </ul>
       </li>
     </ul>
   );

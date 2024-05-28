@@ -8,7 +8,7 @@ import zaki from "/sc/zaki-sc.png";
 import ojan from "/sc/ojan-sc.png";
 import bintang from "/sc/bintang-sc.png";
 import catur from "/sc/catur-sc.png";
-import nadin from "/sc/catur-sc.png";
+import nadin from "/sc/nadin-sc.png";
 
 export const dataSCBPH = new Map([
   [

@@ -5,14 +5,17 @@ import "./output.css";
 import Navbar from "./components/navbar.tsx";
 import { FooterComponent } from "./components/footer-component.tsx";
 import "flowbite";
-import { ModalContextProvider } from "./context/modal-context.tsx";
+import { DepartmentModalContextProvider } from "./context/department-modal-context.tsx";
+import { SCModalContextProvider } from "./context/sc-modal-context.tsx";
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
     <Navbar />
-    <ModalContextProvider>
-      <App />
-    </ModalContextProvider>
+    <SCModalContextProvider>
+      <DepartmentModalContextProvider>
+        <App />
+      </DepartmentModalContextProvider>
+    </SCModalContextProvider>
     <FooterComponent />
   </React.StrictMode>
 );
