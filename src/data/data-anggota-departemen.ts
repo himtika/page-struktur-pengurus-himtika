@@ -1,74 +1,75 @@
-import aldo from "/aldo.jpg";
-import bunga from "/bunga.jpg";
+import bintang from "/sc/bintang-sc.png";
+import dara from "/edukasi/dara-edukasi.png";
+// import desman from "/desman-edukasi.png";
 
 export const dataAnggotaDepartemen = new Map([
     [
       "Human Resource Development",
       {
-        urlGambar: [aldo, bunga],
+        urlGambar: [bintang, dara],
         jumlahAnggota: 2,
       },
     ],
     [
       "Himtika Care",
       {
-        urlGambar: [aldo, bunga],
+        urlGambar: [bintang, dara],
         jumlahAnggota: 2,
       },
     ],
     [
       "Public & Marketing",
       {
-        urlGambar: [aldo, bunga],
+        urlGambar: [bintang, dara],
         jumlahAnggota: 2,
       },
     ],
     [
       "Public Relation",
       {
-        urlGambar: [aldo, bunga],
+        urlGambar: [bintang, dara],
         jumlahAnggota: 2,
       },
     ],
     [
       "Product Development",
       {
-        urlGambar: [aldo, bunga],
+        urlGambar: [bintang, dara],
         jumlahAnggota: 2,
       },
     ],
     [
       "Research Development",
       {
-        urlGambar: [aldo, bunga],
+        urlGambar: [bintang, dara],
         jumlahAnggota: 2,
       },
     ],
     [
       "Skill Education",
       {
-        urlGambar: [aldo, bunga],
+        urlGambar: [bintang, dara],
         jumlahAnggota: 2,
       },
     ],
     [
       "College Education",
       {
-        urlGambar: [aldo, bunga],
+        urlGambar: [bintang, dara],
         jumlahAnggota: 2,
       },
     ],
     [
       "Media Kreatif",
       {
-        urlGambar: [aldo, bunga],
+        urlGambar: [bintang, dara],
         jumlahAnggota: 2,
       },
     ],
     [
       "Media Informasi",
       {
-        urlGambar: [aldo, bunga],
+        urlGambar: [bintang, dara],
         jumlahAnggota: 2,
       },
     ],

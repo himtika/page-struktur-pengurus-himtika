@@ -2,8 +2,6 @@ import DepartmentDetailCard from "./department-detail-card";
 import DepartmentGroup from "./department-group";
 import DivisionGroup from ".//division-group";
 import MemberCard from "./member-card";
-import aldo from "/aldo.jpg";
-import bunga from "/bunga.jpg";
 import empty from "/empty.jpeg";
 
 function StrukturForMobileTabletView() {
@@ -12,18 +10,12 @@ function StrukturForMobileTabletView() {
       {/* <div className="w-1 h-[43.5rem] min-[375px]:h-10 z-10 bg-black rounded-full md:rounded-sm absolute left-[4%] top-[16%]"></div> */}
       {/* <div className="w-[20%] right-[75%] top-[15%] h-1 z-10 bg-black rounded-full md:rounded-sm absolute"></div> */}
       <MemberCard
-        nama="M. Reynaldo A. R."
-        jabatan="Ketua Umum"
-        urlGambar={aldo}
-        cardType="level-1"
+        cardId="aldo"
         className="after:w-1 after:h-10 after:bg-black after:rounded-full md:after:rounded-sm after:content-[''] after:absolute after:-bottom-[2.45rem] after:left-1/2 transition-all active:-translate-y-3"
       />
       {/* <div className="w-1 md:w-2 h-10 bg-black rounded-full md:rounded-sm"></div> */}
       <MemberCard
-        nama="Bunga K. U."
-        jabatan="Wakil Ketua Umum"
-        urlGambar={bunga}
-        cardType="level-1"
+        cardId="bunga"
         className="mt-5 after:w-[12vw] after:max-w-[4.2rem] after:h-1 after:bg-black after:rounded-full md:after:rounded-sm after:content-[''] after:absolute after:top-1/2 after:right-[100%]"
       >
         <div
@@ -39,38 +31,17 @@ function StrukturForMobileTabletView() {
             BPH
           </li>
 
-          {/* Sekum */}
           <DivisionGroup divisi="sekretaris">
-            <MemberCard
-              urlGambar={aldo}
-              jabatan="Sekretaris Umum"
-              nama="R. Gina A."
-              cardType="level-2"
-            />
-            <MemberCard
-              urlGambar={aldo}
-              jabatan="Wakil Sekretaris Umum"
-              nama="Erizka N. R."
-              cardType="level-3"
-            />
+            <MemberCard cardId="gina" />
+            <MemberCard cardId="erizka" />
           </DivisionGroup>
 
           {/* Bendum */}
           <DivisionGroup divisi="bendahara">
-            <MemberCard
-              urlGambar={aldo}
-              jabatan="Bendahara Umum"
-              nama="Fitria Noviyanti Taufik"
-              cardType="level-2"
-            >
+            <MemberCard cardId="fitri">
               {/* <div className="w-1 h-10 bg-black bottom-1/2 absolute z-10 -left-[18%]" /> */}
             </MemberCard>
-            <MemberCard
-              urlGambar={aldo}
-              nama="Rizka Nadila"
-              jabatan="Wakil Bendahara Umum"
-              cardType="level-3"
-            />
+            <MemberCard cardId="rizka" />
           </DivisionGroup>
         </ul>
 
@@ -83,67 +54,72 @@ function StrukturForMobileTabletView() {
 
           {/* Divisi Internal */}
           <DivisionGroup divisi="internal">
-            <MemberCard
-              urlGambar={aldo}
-              jabatan="Ketua Divisi Internal"
-              nama="J. Zaki P."
-              cardType="level-2"
-            />
+            <MemberCard cardId="zaki" />
             <DepartmentGroup>
-              <DepartmentDetailCard imageUrl={empty} departemen="Human Resource Development" />
-              <DepartmentDetailCard imageUrl={empty} departemen="Himtika Care" />
+              <DepartmentDetailCard
+                imageUrl={empty}
+                departemen="Human Resource Development"
+              />
+              <DepartmentDetailCard
+                imageUrl={empty}
+                departemen="Himtika Care"
+              />
             </DepartmentGroup>
           </DivisionGroup>
           {/* Divisi Relasi */}
           <DivisionGroup divisi="relasi">
-            <MemberCard
-              urlGambar={aldo}
-              jabatan="Ketua Divisi Relasi"
-              nama="Magrozan Q. Z."
-              cardType="level-2"
-            />
+            <MemberCard cardId="ojan" />
             <DepartmentGroup>
-              <DepartmentDetailCard imageUrl={empty} departemen="Public & Marketing" />
-              <DepartmentDetailCard imageUrl={empty} departemen="Public Relation"/>
+              <DepartmentDetailCard
+                imageUrl={empty}
+                departemen="Public & Marketing"
+              />
+              <DepartmentDetailCard
+                imageUrl={empty}
+                departemen="Public Relation"
+              />
             </DepartmentGroup>
           </DivisionGroup>
           {/* Divisi RnD */}
           <DivisionGroup divisi="Research and Development">
-            <MemberCard
-              urlGambar={aldo}
-              jabatan="Ketua RnD"
-              nama="Nanindra M. A."
-              cardType="level-2"
-            />
+            <MemberCard cardId="nadin" />
             <DepartmentGroup>
-              <DepartmentDetailCard imageUrl={empty} departemen="Product Development" />
-              <DepartmentDetailCard imageUrl={empty} departemen="Research Development" />
+              <DepartmentDetailCard
+                imageUrl={empty}
+                departemen="Product Development"
+              />
+              <DepartmentDetailCard
+                imageUrl={empty}
+                departemen="Research Development"
+              />
             </DepartmentGroup>
           </DivisionGroup>
           {/* Divisi Edukasi */}
           <DivisionGroup divisi="edukasi">
-            <MemberCard
-              urlGambar={aldo}
-              jabatan="Ketua Divisi Edukasi"
-              nama="Bintang Danuarta"
-              cardType="level-2"
-            />
+            <MemberCard cardId="bintang" />
             <DepartmentGroup>
-              <DepartmentDetailCard imageUrl={empty} departemen="Skill Education" />
-              <DepartmentDetailCard imageUrl={empty} departemen="College Education" />
+              <DepartmentDetailCard
+                imageUrl={empty}
+                departemen="Skill Education"
+              />
+              <DepartmentDetailCard
+                imageUrl={empty}
+                departemen="College Education"
+              />
             </DepartmentGroup>
           </DivisionGroup>
           {/* Divisi Infokom */}
           <DivisionGroup divisi="Informasi & Komunikasi">
-            <MemberCard
-              urlGambar={aldo}
-              jabatan="Ketua Divisi Infokom"
-              nama="Rafi Catur C. W."
-              cardType="level-2"
-            />
+            <MemberCard cardId="catur" />
             <DepartmentGroup>
-              <DepartmentDetailCard imageUrl={empty} departemen="Media Kreatif" />
-              <DepartmentDetailCard imageUrl={empty} departemen="Media Informasi" />
+              <DepartmentDetailCard
+                imageUrl={empty}
+                departemen="Media Kreatif"
+              />
+              <DepartmentDetailCard
+                imageUrl={empty}
+                departemen="Media Informasi"
+              />
             </DepartmentGroup>
           </DivisionGroup>
         </ul>
