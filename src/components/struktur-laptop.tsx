@@ -72,7 +72,7 @@ function StrukturLaptopView() {
 
           <DepartmentDetailCard
             imageUrl={empty}
-            departemen="Humadn Resource Development"
+            departemen="Human Resource Development"
           />
           <DepartmentDetailCard imageUrl={empty} departemen="Himtika Care" />
         </div>

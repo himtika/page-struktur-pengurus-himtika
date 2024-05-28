@@ -3,18 +3,30 @@ import { createContext, useContext, useState } from "react";
 type modalContextType = {
   modalOpened: string;
   setModalOpened: React.Dispatch<React.SetStateAction<string>>;
+  modalIndex: number;
+  setModalIndex: React.Dispatch<React.SetStateAction<number>>;
+  handleCloseModal: VoidFunction
 };
 
 const ModalContext = createContext<modalContextType>({
   modalOpened: "",
   setModalOpened: () => {},
+  modalIndex: 0,
+  setModalIndex: () => {},
+  handleCloseModal: () => {}
 });
 
 function ModalContextProvider({ children }: { children: React.ReactNode }) {
-  const [modalOpened, setModalOpened] = useState<string>("Human Resource Development");
+  const [modalOpened, setModalOpened] = useState<string>("");
+  const [modalIndex, setModalIndex] = useState(0);
+
+  function handleCloseModal() {
+    setModalIndex(0);
+    setModalOpened('');
+  }
 
   return (
-    <ModalContext.Provider value={{ modalOpened, setModalOpened }}>
+    <ModalContext.Provider value={{ modalOpened, setModalOpened, modalIndex, setModalIndex, handleCloseModal}}>
       {children}
     </ModalContext.Provider>
   );

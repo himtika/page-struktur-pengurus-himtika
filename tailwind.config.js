@@ -11,6 +11,7 @@ export default {
         primary: "#00AEE2",
         secondary: "#26C5E6",
         tertiary: "#FDF722",
+        white2: '#F4F4F5'
       },
       screens: {
         xs: "425px",

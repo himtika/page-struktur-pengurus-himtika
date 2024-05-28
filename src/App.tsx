@@ -4,7 +4,7 @@ import { useModalContext } from "./context/modal-context";
 import DepartmentModal from "./components/department-modal";
 
 function App() {
-  const { modalOpened, setModalOpened } = useModalContext();
+  const { modalOpened, handleCloseModal } = useModalContext();
 
   return (
     <div className="bg-secondary px-3 py-10 text-white transition-all font-figtree">
@@ -24,14 +24,15 @@ function App() {
       <StrukturLaptopView />
 
       {modalOpened && (
-        <div
-          role="detail-modal"
-          className="fixed top-0 left-0 bottom-0 right-0 backdrop-blur-sm bg-white/30 z-40 cursor-pointer"
-          onClick={setModalOpened.bind(null, "")}
-        />
+        <>
+          <div
+            role="detail-modal"
+            className="fixed top-0 left-0 bottom-0 right-0 backdrop-blur-sm bg-white/30 z-40 cursor-pointer"
+            onClick={handleCloseModal}
+          />
+          <DepartmentModal />
+        </>
       )}
-
-      <DepartmentModal />
     </div>
   );
 }

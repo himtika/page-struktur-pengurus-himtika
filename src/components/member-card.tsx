@@ -17,7 +17,7 @@ function MemberCard({
   if (currentMember?.cardType === "level-1")
     return (
       <div
-        className={`w-[65%] lg:min-h-[20rem] lg:w-[20%] bg-primary pt-2 pb-5 px-2 rounded-xl relative ${className} z-10`}
+        className={`w-[65%] lg:min-h-[20rem] lg:w-[20%] bg-secondary pt-2 pb-5 px-2 rounded-xl relative ${className} z-10`}
         onClick={setModalOpened.bind(null, "aldo")}
       >
         {children}
@@ -26,8 +26,8 @@ function MemberCard({
           role="member-image"
           className={`h-fit relative overflow-hidden rounded-t-xl  `}
         >
-          <img src={currentMember?.urlGambar} alt="" className="absolute scale-150 " />
-          <img src={currentMember?.urlGambar} alt="" className="invisible scale-150 " />
+          <img src={currentMember?.urlGambar} alt="" className="absolute w-full h-full" />
+          <img src={currentMember?.urlGambar} alt="" className="invisible w-full h-full" />
         </div>
 
         <div role="member-description" className="text-center mt-2">
@@ -51,7 +51,7 @@ function MemberCard({
           !(className?.includes("lg:w-full") && currentMember?.cardType === "level-2")
             ? "lg:w-[18%]"
             : "lg:w-full"
-        } min-h-48 lg:min-h-72 px-1 pt-1 pb-3 lg:pb-5 bg-primary rounded-xl flex flex-col justify-evenly relative z-30 lg:z-10`}
+        } min-h-48 lg:min-h-72 px-1 pt-1 pb-3 lg:pb-5 bg-secondary rounded-xl flex flex-col justify-evenly relative z-30 lg:z-10`}
       >
         <div className="w-[6vw] max-w-[1.7rem] h-1 bg-black rounded-full md:rounded-sm absolute right-[100%] bottom-1/2 lg:hidden"></div>
 
@@ -70,7 +70,7 @@ function MemberCard({
           <img
             src={currentMember?.urlGambar}
             alt=""
-            className="absolute scale-[2] top-[8px]"
+            className="absolute w-full h-full"
           />
           <img src={currentMember?.urlGambar} alt="" className="invisible scale-[2] " />
         </div>
@@ -97,7 +97,7 @@ function MemberCard({
   if (currentMember?.cardType === "level-3")
     return (
       <li
-        className={`w-[40%] bg-primary p-2 rounded-xl flex flex-col justify-evenly relative`}
+        className={`w-[40%] bg-secondary p-2 rounded-xl flex flex-col justify-evenly relative`}
       >
         <div className="w-[3vw] max-w-[2.3rem]  h-1 bg-black rounded-full md:rounded-sm absolute right-[100%]"></div>
 

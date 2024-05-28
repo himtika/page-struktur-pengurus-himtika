@@ -4,17 +4,11 @@ import {
   IoMdCloseCircle,
 } from "react-icons/io";
 import { useModalContext } from "../context/modal-context";
-import { useState } from "react";
 import { dataAnggotaDepartemen } from "../data/data-anggota-departemen";
 
 function DepartmentModal() {
-  const { modalOpened, setModalOpened } = useModalContext();
-  const [modalIndex, setModalIndex] = useState(0);
-
-  // const urlGambarAnggota = new Map([
-  //   [0, aldo],
-  //   [1, bunga],
-  // ]);
+  const { modalOpened, handleCloseModal, setModalIndex, modalIndex } =
+    useModalContext();
 
   const currentDepartment = dataAnggotaDepartemen.get(modalOpened);
 
@@ -45,7 +39,7 @@ function DepartmentModal() {
         className="absolute z-50 w-10 -left-5 -top-5 cursor-pointer"
         size={50}
         color="black"
-        onClick={setModalOpened.bind(null, "")}
+        onClick={handleCloseModal}
       />
 
       <IoIosArrowDropleftCircle
@@ -59,7 +53,7 @@ function DepartmentModal() {
         onClick={handleClickRight}
       />
 
-      <div className="overflow-hidden w-full rounded-xl">
+      <div className="overflow-hidden w-full rounded-t-xl">
         <div className="w-full bg-tertiary h-fit py-3 px-3 z-10 relative">
           <h1 className="font-semibold  min-[375px]:text-lg">
             Departemen {modalOpened}
